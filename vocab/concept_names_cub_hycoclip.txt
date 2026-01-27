@@ -1,0 +1,317 @@
+A black body
+A conical bill
+A long tail
+A red eye
+A short tail
+All-dark plumage
+Glossy black wing
+Long, hooked bill
+Long, slim body
+Shiny black plumage
+White wingtips
+Yellow eye
+a Scarlet-red body
+a big head
+a black back
+a black beak
+a black bill
+a black body
+a black breast
+a black cap
+a black collar
+a black eye-stripe
+a black face
+a black head
+a black hood
+a black mask
+a black tail
+a black throat
+a black wingtip
+a black wingtips
+a blue back
+a blue body
+a blue head
+a blue-gray back
+a blue-gray body
+a blue-grey back
+a brown back
+a brown body
+a brown breast
+a brown cap
+a brown tail
+a brownish back
+a brownish cap
+a brownish-gray color
+a brownish-red breast
+a buffy breast
+a built-in keyboard
+a curved beak
+a dark coloration
+a duck-like bird
+a forked tail
+a gray back
+a gray body
+a gray breast
+a gray chest
+a gray crown
+a gray head
+a gray plumage
+a grayish-brown back
+a grayish-brown body
+a grayish-brown crown
+a grayish-brown head
+a grayish-white body
+a green back
+a green body
+a greenish back
+a greenish-yellow back
+a greenish-yellow body
+a grey back
+a high dispersion
+a hooked beak
+a hooked bill
+a large bill
+a large bird
+a large body
+a large head
+a large, seabird
+a light-colored belly
+a light-colored underside
+a long beak
+a long bill
+a long body
+a long neck
+a long tail
+a loud caw
+a medium-sized bird
+a medium-sized duck
+a pink bill
+a pinkish breast
+a plump body
+a pointed beak
+a pointed bill
+a raucous call
+a raucous voice
+a red belly
+a red body
+a red breast
+a red face
+a red head
+a red throat
+a reddish-brown back
+a reddish-brown body
+a reddish-brown color
+a rosy breast
+a round body
+a ruby-red throat
+a rusty cap
+a rusty-brown back
+a rusty-brown cap
+a rusty-red breast
+a seabird
+a short beak
+a short tail
+a slender body
+a small beak
+a small bill
+a small bird
+a small body
+a small head
+a small mouth
+a small songbird
+a small tail
+a small, songbird
+a stocky body
+a stout body
+a streaked back
+a streaked breast
+a streaked chest
+a streaked head
+a thick bill
+a thin beak
+a white belly
+a white body
+a white breast
+a white chest
+a white crown
+a white eye-ring
+a white eyebrow
+a white face
+a white front
+a white rump
+a white throat
+a white underbelly
+a white underside
+a white wingbar
+a whitish throat
+a yellow beak
+a yellow belly
+a yellow bill
+a yellow body
+a yellow breast
+a yellow crown
+a yellow eye
+a yellow eyebrow
+a yellow head
+a yellow throat
+a yellow-tipped tail
+a yellowish belly
+a yellowish bill
+a yellowish breast
+a yellowish eyebrow
+all black body
+all black coloration
+all black feather
+all black plumage
+all-white plumage
+black beak
+black eye
+black feather
+black foot
+black leg
+black mask
+black plumage
+black tail
+black wing
+black wingtips
+blue eye
+blue plumage
+blue upperparts
+blue wing
+blue-gray wing
+bright golden-yellow plumage
+brown upperparts
+brown wing
+brownish plumage
+brownish-gray plumage
+brownish-grey upperparts
+dark blue-black upperparts
+dark blue-gray upperparts
+dark wingtips
+eye are yellow
+forked tail
+gray feather
+gray head
+gray plumage
+gray upperparts
+gray wing
+grayish brown body
+grayish upperparts
+grayish wing
+grayish-brown plumage
+grayish-white underpart
+green head
+green plumage
+green wing
+greenish upperparts
+greenish-yellow leg
+greenish-yellow upperparts
+grey leg
+grey side
+grey upperparts
+hairy body
+hooked beak
+iridescent black feather
+iridescent blue-green back
+iridescent feather
+iridescent green feather
+iridescent green plumage
+large black bird
+large body
+large eye
+large foot
+large size
+large webbed foot
+large wingspan
+long black tail
+long leg
+long tail
+long tail feather
+long wing
+long wingspan
+long, black bill
+long, black leg
+long, black wing
+long, black wingtips
+long, blue-gray wing
+long, brown leg
+long, brown wing
+long, dark wing
+long, narrow wing
+long, pointed wing
+long, powerful wing
+long, red leg
+long, tapered wing
+long, thin antenna
+long, thin leg
+long, webbed foot
+long, white leg
+loud, rasping voice
+olive upperparts
+olive-colored side
+olive-gray upperparts
+olive-green back
+olive-green upperparts
+orange eye
+orange foot
+orange leg
+orange throat
+orange-yellow leg
+pale belly
+pale blue-gray upperparts
+pale brown upperparts
+pale gray upperparts
+pale pink leg
+pointed wing
+red eye
+red feather
+red leg
+red shoulder
+red-brown color
+rufous (red-brown) color
+rusty-brown feather
+shaggy appearance
+shaggy feather
+shiny black eye
+short leg
+short tail
+short wing
+short, black leg
+short, brown leg
+short, dark leg
+short, yellow leg
+silky, brown feather
+small, slim body
+spotted feather
+spotted plumage
+streaked upperparts
+two long wing
+two red eye
+webbed foot
+webbed toe
+white belly
+white body
+white breast
+white plumage
+white tail
+white underpart
+white underside
+white undertail covert
+white undertail feather
+white underwing
+white wing bar
+white wingbars
+wing bar
+yellow beak
+yellow bill
+yellow eye
+yellow foot
+yellow underpart
+yellow wing
+yellowish eye
+yellowish leg
+yellowish side
+yellowish underpart
+yellowish upperparts
+yellowish-brown wing
+yellowish-green leg
