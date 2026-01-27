@@ -161,7 +161,7 @@ python train_hypcbm.py \
 | Argument | Description | Default |
 |----------|-------------|---------|
 | `--concept-bank` | Path to encoded concept bank (.pkl) | Required |
-| `--backbone-name` | Backbone model (`hycoclip`, `meru`, `clip`) | `hycoclip` |
+| `--backbone-name` | Backbone model (`hycoclip`, `meru`, `clip`, `clipvitb`) | `hycoclip` |
 | `--dataset` | Dataset name (`cifar10`, `cifar100`, `imagenet`, `sun397`, `cub`) | `cifar100` |
 | `--entail-eta` | Entailment cone scaling factor (smaller = stricter) | `1.4` |
 | `--lam` | Elastic-net regularization strength | `1e-5` |
@@ -170,6 +170,7 @@ python train_hypcbm.py \
 | `--viz-concept-accuracy` | Enable accuracy vs. sparsity visualization | `False` |
 | `--viz-lambdas` | Lambda values to sweep for visualization | `None` |
 
+clipvitb is the original OpenAI CLIP. for this, you have to uncomment the code below the 'for OpenAI CLIP:' comments.
 **Example: CIFAR-100**
 
 ```bash
