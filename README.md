@@ -1,6 +1,5 @@
 # HypCBM: Hyperbolic Concept Bottleneck Models
 
-[![Paper](https://img.shields.io/badge/Paper-ICML%202026-blue)](https://icml.cc/)
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9+-green.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-orange.svg)](https://pytorch.org/)
 
