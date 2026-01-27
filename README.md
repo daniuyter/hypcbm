@@ -171,6 +171,7 @@ python train_hypcbm.py \
 | `--viz-lambdas` | Lambda values to sweep for visualization | `None` |
 
 clipvitb is the original OpenAI CLIP. for this, you have to uncomment the code below the 'for OpenAI CLIP:' comments.
+
 **Example: CIFAR-100**
 
 ```bash
