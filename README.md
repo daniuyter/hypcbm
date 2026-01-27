@@ -47,7 +47,7 @@ HypCBM extends Concept Bottleneck Models to hyperbolic space, enabling:
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/hypcbm.git
+git clone https://github.com/daniuyter/hypcbm.git
 cd hypcbm
 
 # Create conda environment
@@ -60,7 +60,7 @@ pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
 # Install dependencies
 pip install -r requirements.txt
 
-# Download HyCoCLIP/MERU checkpoints (place in hycoclip/)
+# Download HyCoCLIP/MERU/CLIP checkpoints (place in hycoclip/)
 # See hycoclip/model-zoo.md for download links
 ```
 
@@ -92,7 +92,7 @@ hypcbm/
 │   ├── concept_names_cifar100_hycoclip.txt
 │   ├── concept_names_imagenet_hycoclip.txt
 │   └── concept_names_sun397_hycoclip.txt
-├── encode_concepts.py      # Encode concepts into hyperbolic space
+├── encode_concepts.py      # Encode concepts
 ├── train_hypcbm.py         # Train HypCBM (entailment-based)
 ├── train_pcbm_baseline.py  # Train Euclidean PCBM baseline
 ├── interactive_interventions.ipynb  # Interactive demo notebook
@@ -163,7 +163,7 @@ python train_hypcbm.py \
 | `--concept-bank` | Path to encoded concept bank (.pkl) | Required |
 | `--backbone-name` | Backbone model (`hycoclip`, `meru`, `clip`) | `hycoclip` |
 | `--dataset` | Dataset name (`cifar10`, `cifar100`, `imagenet`, `sun397`, `cub`) | `cifar100` |
-| `--entail-eta` | Entailment cone scaling factor (larger = stricter) | `1.4` |
+| `--entail-eta` | Entailment cone scaling factor (smaller = stricter) | `1.4` |
 | `--lam` | Elastic-net regularization strength | `1e-5` |
 | `--alpha` | Elastic-net L1 ratio (1.0 = pure L1) | `0.99` |
 | `--train-fraction` | Fraction of training data to use | `1.0` |
@@ -279,14 +279,14 @@ domestic animal
 
 ### Hierarchical Consistency
 
-Evaluate how well the model respects concept hierarchies:
+Evaluate hierarchical consistency:
 
 ```bash
 python eval/hierarchical_consistency_eval.py \
   --artifact-path outputs/entailment_cbm_cifar100_hycoclip_1frac.pkl \
   --concept-bank outputs/multimodal_concept_hycoclip_cifar100_minnorm:0.27.pkl \
   --dataset cifar100 \
-  --eta 1.5
+  --eta 1.2
 ```
 
 ### OOD Robustness
@@ -330,25 +330,24 @@ Update the `DATASET_CONFIGS` in the first cell to point to your trained artifact
 | `imagenet` | 1000 | ImageNet-1K (requires `--imagenet-root`) |
 | `sun397` | 397 | SUN397 scene classification |
 | `cub` | 200 | CUB-200-2011 bird classification (requires `--cub-root`) |
-
 ---
+Any other datasets can be added with some modifications.
 
-## Example SLURM Jobs
+## Example Jobs
 
+### Concept Encoding
+
+```bash
+python encode_concepts.py \
+  --concepts-txt vocab/concept_names_imagenet_hycoclip.txt \
+  --out-dir outputs_imagenet \
+  --backbone-name hycoclip \
+  --scenario imagenet \
+  --min-norm 0.27
+```
 ### CIFAR-100 Training
 
 ```bash
-#!/bin/bash
-#SBATCH --partition=gpu
-#SBATCH --gpus=1
-#SBATCH --job-name=hypcbm-cifar100
-#SBATCH --cpus-per-task=8
-#SBATCH --time=2:00:00
-#SBATCH --output=logs/cifar100_%j.out
-
-module load anaconda
-source activate hypcbm
-
 python train_hypcbm.py \
   --concept-bank outputs/multimodal_concept_hycoclip_cifar100_minnorm:0.27.pkl \
   --backbone-name hycoclip \
@@ -363,17 +362,6 @@ python train_hypcbm.py \
 ### ImageNet Training
 
 ```bash
-#!/bin/bash
-#SBATCH --partition=gpu_a100
-#SBATCH --gpus=1
-#SBATCH --job-name=hypcbm-imagenet
-#SBATCH --cpus-per-task=16
-#SBATCH --time=24:00:00
-#SBATCH --output=logs/imagenet_%j.out
-
-module load anaconda
-source activate hypcbm
-
 python train_hypcbm.py \
   --concept-bank outputs_imagenet/multimodal_concept_hycoclip_imagenet_minnorm:0.27.pkl \
   --backbone-name hycoclip \
@@ -390,25 +378,6 @@ python train_hypcbm.py \
 ### SUN397 Training
 
 ```bash
-#!/bin/bash
-#SBATCH --partition=gpu
-#SBATCH --gpus=1
-#SBATCH --job-name=hypcbm-sun397
-#SBATCH --cpus-per-task=16
-#SBATCH --time=4:00:00
-#SBATCH --output=logs/sun397_%j.out
-
-module load anaconda
-source activate hypcbm
-
-# Step 1: Encode concepts
-python encode_concepts.py \
-  --concepts-txt vocab/concept_names_sun397_hycoclip.txt \
-  --out-dir outputs_sun397 \
-  --backbone-name hycoclip \
-  --scenario sun397 \
-  --min-norm 0.27
-
 # Step 2: Train HypCBM
 python train_hypcbm.py \
   --concept-bank outputs_sun397/multimodal_concept_hycoclip_sun397_minnorm:0.27.pkl \
@@ -421,41 +390,14 @@ python train_hypcbm.py \
   --viz-lambdas 1e-2 5e-3 1e-3 5e-4 1e-4 5e-5 1e-5
 ```
 
-### Concept Encoding Only
-
-```bash
-#!/bin/bash
-#SBATCH --partition=gpu
-#SBATCH --gpus=1
-#SBATCH --job-name=encode-concepts
-#SBATCH --cpus-per-task=4
-#SBATCH --time=0:30:00
-#SBATCH --output=logs/encode_%j.out
-
-module load anaconda
-source activate hypcbm
-
-python encode_concepts.py \
-  --concepts-txt vocab/concept_names_imagenet_hycoclip.txt \
-  --out-dir outputs_imagenet \
-  --backbone-name hycoclip \
-  --scenario imagenet \
-  --min-norm 0.27
-```
-
 ---
 
 ## Citation
 
 If you find this work useful, please cite:
 
-```bibtex
-@inproceedings{hypcbm2026,
-  title={Hyperbolic Concept Bottleneck Models},
-  author={},
-  booktitle={International Conference on Machine Learning (ICML)},
-  year={2026}
-}
+```
+🤞
 ```
 
 ---
@@ -470,4 +412,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 This work builds upon:
 - [Post-hoc Concept Bottleneck Models](https://github.com/mertyg/post-hoc-cbm) by Yuksekgonul et al.
-- [HyCoCLIP/MERU](https://github.com/facebookresearch/meru) for hyperbolic vision-language models
+- [HyCoCLIP/MERU](https://github.com/PalAvik/hycoclip) for hyperbolic vision-language models (Pal et al.)
